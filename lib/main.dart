@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      /*rehatsiz
+      /*ffff
       // ignore: prefer_const_literals_to_create_immutables
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
