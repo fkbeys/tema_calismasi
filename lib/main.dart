@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:tema_calismasi/pages/loginpage.dart';
+import 'package:tema_calismasi/pages/LoginPage.dart';
 import 'theme/ThemeClass.dart';
 import 'theme/ThemeData.dart';
 
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      /*xxxxxxxxxxxx
+      /*abiiiiiiixx
       /sasdasd
       // ignore: prefer_const_literals_to_create_immutables
       localizationsDelegates: [
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: darkTheme,
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(body: LoginPage()),
+      home: const LoginPage(),
     );
   }
 }
