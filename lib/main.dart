@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:tema_calismasi/pages/LoginPage.dart';
-import 'theme/ThemeClass.dart';
-import 'theme/ThemeData.dart';
+import 'package:tema_calismasi/pages/login_page.dart';
+import 'theme/theme_class.dart';
+import 'theme/theme_data.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(

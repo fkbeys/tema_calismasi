@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:tema_calismasi/model/KullanicilarModel';
+import 'package:tema_calismasi/model/kullanicilar_model.dart';
 
 class ApiOperations {
   static Future<List<KullanicilarModel>> loadx(

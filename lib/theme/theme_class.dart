@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tema_calismasi/widgets/CustomToastMessage.dart';
+import 'package:tema_calismasi/widgets/custom_toast_messager.dart';
 
 class ThemeClass extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.light;
