@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:progress_dialog/progress_dialog.dart';
 
 class Msg {

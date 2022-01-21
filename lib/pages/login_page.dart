@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:progress_dialog/progress_dialog.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 import 'package:tema_calismasi/Managers/login_manager.dart';
 import 'package:tema_calismasi/managers/custom_dialogs.dart';
 import 'package:tema_calismasi/pages/home_page.dart';
@@ -52,16 +52,21 @@ class _LoginPageState extends State<LoginPage> {
                 customhintText: "Sirket",
                 gelenIcon: Icons.home,
                 gelenController: _companyController,
+                gelenObsecureText: false,
+                gelenfontsize: 15.sp,
               ),
               CustomTextFieldWidget(
-                customhintText: "Kullanici Adi",
-                gelenIcon: Icons.people,
-                gelenController: _usernameConroller,
-              ),
+                  customhintText: "Kullanici Adi",
+                  gelenIcon: Icons.people,
+                  gelenController: _usernameConroller,
+                  gelenObsecureText: false,
+                  gelenfontsize: 15.sp),
               CustomTextFieldWidget(
                 customhintText: "Sifre",
                 gelenIcon: Icons.password,
                 gelenController: _passwordController,
+                gelenObsecureText: true,
+                gelenfontsize: 15.sp,
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
@@ -71,36 +76,40 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       children: [
                         CustomElevatedButton(
+                            gelenheight: 10.h,
+                            gelenwidth: 10.h,
+                            gelenfontsize: 10.sp,
                             buttonText: 'Giriş Yap',
                             gelenIcon: Icons.login,
                             gelenRenk: Colors.redAccent,
                             customOnPressed: () async {
-                              {
-                                // await dialogum.show();
-                                await Msg(context).show("yukleniyoreeeeeee");
+                              // await dialogum.show();
+                              await Msg(context).show("yukleniyoreeeeeee");
 
-                                bool result = await loginManager(
-                                    _companyController.text,
-                                    _usernameConroller.text,
-                                    _passwordController.text);
+                              bool result = await loginManager(
+                                  _companyController.text,
+                                  _usernameConroller.text,
+                                  _passwordController.text);
 
-                                if (result) {
-                                  await Msg(context).hide();
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HomePage()));
-                                } else {
-                                  await Msg(context).hide();
-                                  await Msg(context).show("Giris Basarisiz");
-                                }
+                              if (result) {
                                 await Msg(context).hide();
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const HomePage()));
+                              } else {
+                                await Msg(context).hide();
+                                await Msg(context).show("Giris Basarisiz");
                               }
+                              await Msg(context).hide();
                             }),
                       ],
                     ),
                     CustomElevatedButton(
+                        gelenheight: 10.h,
+                        gelenwidth: 10.h,
+                        gelenfontsize: 10.sp,
                         buttonText: "Demo",
                         gelenIcon: Icons.vpn_key,
                         customOnPressed: () {
@@ -110,6 +119,9 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         gelenRenk: Colors.blue.shade600),
                     CustomElevatedButton(
+                      gelenheight: 10.h,
+                      gelenwidth: 10.h,
+                      gelenfontsize: 10.sp,
                       customOnPressed: () => temadegistir(context),
                       buttonText: '',
                       gelenIcon: Icons.light_mode,

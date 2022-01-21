@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 import 'package:tema_calismasi/pages/login_page.dart';
 import 'theme/theme_class.dart';
 import 'theme/theme_data.dart';
@@ -22,9 +23,9 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      /*abiiiiiiixx
-      /sasdasd
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        /* 
       // ignore: prefer_const_literals_to_create_immutables
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
@@ -37,13 +38,14 @@ class _MyAppState extends State<MyApp> {
         const Locale('tr', ''),
       ],
       */
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      themeMode: Provider.of<ThemeClass>(context).themeMode,
-      darkTheme: darkTheme,
-      theme: lightTheme,
-      debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
-    );
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        themeMode: Provider.of<ThemeClass>(context).themeMode,
+        darkTheme: darkTheme,
+        theme: lightTheme,
+        debugShowCheckedModeBanner: false,
+        home: const LoginPage(),
+      );
+    });
   }
 }

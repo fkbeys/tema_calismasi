@@ -42,6 +42,8 @@ dependencies:
   provider: ^6.0.2
   fluttertoast: ^8.0.8
   progress_dialog: ^1.2.4
+  widget_utils: 0.2.8
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:
