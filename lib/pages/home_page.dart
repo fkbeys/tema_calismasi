@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tema_calismasi/pages/login_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,8 +8,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // ignore: avoid_unnecessary_containers
       body: Container(
-        child: Center(
-          child: Text("hosgelmisen" + LoginPage.girisYapanKullanici),
+        child: const Center(
+          child: Text("hosgelmisen"),
         ),
       ),
     );
