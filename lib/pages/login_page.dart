@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tema_calismasi/Managers/login_manager.dart';
 import 'package:tema_calismasi/managers/custom_dialogs.dart';
+import 'package:tema_calismasi/managers/permission_manager.dart';
 import 'package:tema_calismasi/pages/home_page.dart';
 import 'package:tema_calismasi/theme/theme_class.dart';
 import 'package:tema_calismasi/widgets/custom_elevated_button.dart';
@@ -20,6 +21,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    requestLocationPermission();
+    requestCameraPermission();
+
     // var dialogum = ProgressDialog(context);
 
     var t = AppLocalizations.of(context)!;
