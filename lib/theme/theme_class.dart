@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tema_calismasi/widgets/custom_toast_messager.dart';
 
-class ThemeClass extends ChangeNotifier {
+class GenericProviderMethods extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.light;
   bool durum = false;
 

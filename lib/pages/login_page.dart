@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import 'package:tema_calismasi/Managers/login_manager.dart';
 import 'package:tema_calismasi/managers/custom_dialogs.dart';
+import 'package:tema_calismasi/managers/login_manager.dart';
 import 'package:tema_calismasi/managers/permission_manager.dart';
+import 'package:tema_calismasi/managers/shared_preferences_manager.dart';
 import 'package:tema_calismasi/pages/home_page.dart';
 import 'package:tema_calismasi/theme/theme_class.dart';
+import 'package:tema_calismasi/view_model/login_vm.dart';
 import 'package:tema_calismasi/widgets/custom_elevated_button.dart';
 import 'package:tema_calismasi/widgets/custom_label.dart';
 import 'package:tema_calismasi/widgets/custom_text_field.dart';
@@ -19,18 +21,26 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  LoginVM gelenLoginVm = LoginVM("x", "y", "z", true);
+
   @override
   Widget build(BuildContext context) {
     requestLocationPermission();
     requestCameraPermission();
 
-    // var dialogum = ProgressDialog(context);
-
     var t = AppLocalizations.of(context)!;
-    final _companyController = TextEditingController();
-    final _usernameConroller = TextEditingController();
-    final _passwordController = TextEditingController();
+    var _companyController = TextEditingController();
+    var _usernameConroller = TextEditingController();
+    var _passwordController = TextEditingController();
 
+    void kullaniciBilgileriOku() async {
+      gelenLoginVm = await SharedPrefs().readLoginPrefs();
+      _companyController.text = gelenLoginVm.company;
+      _usernameConroller.text = gelenLoginVm.username;
+      _passwordController.text = gelenLoginVm.password;
+    }
+
+    kullaniciBilgileriOku();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -73,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 gelenfontsize: 15.sp,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width,
+                width: 100.h,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -81,14 +91,14 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         CustomElevatedButton(
                             gelenheight: 10.h,
-                            gelenwidth: 10.h,
+                            gelenwidth: 30.h,
                             gelenfontsize: 10.sp,
                             buttonText: 'Giriş Yap',
                             gelenIcon: Icons.login,
                             gelenRenk: Colors.redAccent,
                             customOnPressed: () async {
                               // await dialogum.show();
-                              await Msg(context).show("yukleniyoreeeeeee");
+                              await Msg(context).show("Giriş Yapılıyor...");
 
                               bool result = await loginManager(
                                   _companyController.text,
@@ -104,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                                             const HomePage()));
                               } else {
                                 await Msg(context).hide();
-                                await Msg(context).show("Giris Basarisiz");
+                                await Msg(context).show("Giriş başarısız.");
                               }
                               await Msg(context).hide();
                             }),
@@ -112,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     CustomElevatedButton(
                         gelenheight: 10.h,
-                        gelenwidth: 10.h,
+                        gelenwidth: 20.h,
                         gelenfontsize: 10.sp,
                         buttonText: "Demo",
                         gelenIcon: Icons.vpn_key,
@@ -124,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                         gelenRenk: Colors.blue.shade600),
                     CustomElevatedButton(
                       gelenheight: 10.h,
-                      gelenwidth: 10.h,
+                      gelenwidth: 7.h,
                       gelenfontsize: 10.sp,
                       customOnPressed: () => temadegistir(context),
                       buttonText: '',
@@ -142,6 +152,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   temadegistir(BuildContext context) {
-    Provider.of<ThemeClass>(context, listen: false).temadegistir();
+    Provider.of<GenericProviderMethods>(context, listen: false).temadegistir();
   }
 }

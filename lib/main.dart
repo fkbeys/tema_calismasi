@@ -8,7 +8,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (_) => ThemeClass(),
+    create: (_) => GenericProviderMethods(),
     child: const MyApp(),
   ));
 }
@@ -24,6 +24,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
+      // LoginVM gelenLoginVm = LoginVM("a", "b", "c", true);
+      // var bilgi = kullaniciBilgileriOku();
       return MaterialApp(
         /* 
       // ignore: prefer_const_literals_to_create_immutables
@@ -40,7 +42,7 @@ class _MyAppState extends State<MyApp> {
       */
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        themeMode: Provider.of<ThemeClass>(context).themeMode,
+        themeMode: Provider.of<GenericProviderMethods>(context).themeMode,
         darkTheme: darkTheme,
         theme: lightTheme,
         debugShowCheckedModeBanner: false,

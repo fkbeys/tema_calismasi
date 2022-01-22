@@ -10,8 +10,8 @@ ThemeData lightTheme = ThemeData(
         const FloatingActionButtonThemeData(backgroundColor: _accentColor),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0)),
+            // padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+            //     const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0)),
             shape: MaterialStateProperty.all<OutlinedBorder>(
                 RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0))),
@@ -38,8 +38,8 @@ ThemeData darkTheme = ThemeData(
       fillColor: Colors.grey.withOpacity(0.1)),
   elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-              const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0)),
+          // padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          //     const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0)),
           shape: MaterialStateProperty.all<OutlinedBorder>(
               RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0))),

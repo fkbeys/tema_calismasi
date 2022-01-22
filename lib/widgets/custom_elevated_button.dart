@@ -27,7 +27,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         style: ButtonStyle(
             minimumSize:
-                MaterialStateProperty.all(Size(gelenheight, gelenwidth)),
+                MaterialStateProperty.all(Size(gelenwidth, gelenheight)),
             backgroundColor: MaterialStateProperty.all(gelenRenk),
             textStyle:
                 MaterialStateProperty.all(TextStyle(fontSize: gelenfontsize))),
