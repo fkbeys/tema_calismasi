@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         CustomElevatedButton(
                             gelenheight: 10.h,
-                            gelenwidth: 30.h,
+                            gelenwidth: 40.w,
                             gelenfontsize: 10.sp,
                             buttonText: 'Giriş Yap',
                             gelenIcon: Icons.login,
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     CustomElevatedButton(
                         gelenheight: 10.h,
-                        gelenwidth: 20.h,
+                        gelenwidth: 30.w,
                         gelenfontsize: 10.sp,
                         buttonText: "Demo",
                         gelenIcon: Icons.vpn_key,
@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                         gelenRenk: Colors.blue.shade600),
                     CustomElevatedButton(
                       gelenheight: 10.h,
-                      gelenwidth: 7.h,
+                      gelenwidth: 10.w,
                       gelenfontsize: 10.sp,
                       customOnPressed: () => temadegistir(context),
                       buttonText: '',
